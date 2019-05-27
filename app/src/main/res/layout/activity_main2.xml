@@ -7,16 +7,15 @@
     android:padding="10dp"
     tools:context=".Main2Activity">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Retar celular:" />
+
 
     <EditText
         android:id="@+id/celularReto"
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:hint="Retar Celular"
+        android:visibility="gone"
         android:inputType="number" />
 
     <Button
@@ -25,8 +24,33 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
+        android:visibility="gone"
         android:layout_marginTop="10dp"
         android:ems="10"
         android:text="Retar" />
+
+
+
+
+    <EditText
+        android:id="@+id/nombre2"
+
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        android:hint="Nombre jugador 2"
+        android:layout_height="wrap_content"
+        />
+
+
+    <Button
+        android:id="@+id/join"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone"
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:text="Entrar" />
 
 </LinearLayout>

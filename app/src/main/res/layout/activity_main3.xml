@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#fff"
+
     android:orientation="vertical"
     android:layout_gravity="center"
     android:gravity="center"
@@ -11,37 +11,99 @@
     tools:context=".Main3Activity">
 
     <TextView
+        android:id="@+id/iniciar"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:text="¡AGITAR EL DISPOSITIVO!"
+        android:textSize="20dp"
+        android:textColor="#FFC107"
+        android:textStyle="bold"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/listo1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="¡Listo!"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:textColor="#4CAF50"
+        android:textAlignment="center" />
+
+    <TextView
+        android:id="@+id/nombre1"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
         android:text="TU NOMBRE"
         android:textAlignment="center" />
 
     <ImageView
+        android:id="@+id/objeto1"
+
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/preloader" />
+        android:src="@drawable/blanco" />
 
     <TextView
+        android:id="@+id/listo2"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
+        android:text="Esperando ..."
+        android:textColor="#000"
+        android:textSize="20dp"
+        android:textStyle="bold"
+
+        android:textAlignment="center" />
+    <TextView
+        android:id="@+id/nombre2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:textSize="20dp"
         android:text="EL OTRO"
         android:textAlignment="center" />
 
     <ImageView
+        android:id="@+id/objeto2"
+
         android:layout_width="150dp"
         android:layout_height="150dp"
         android:layout_gravity="center"
         android:layout_marginBottom="10dp"
-        android:src="@drawable/preloader" />
+        android:src="@drawable/blanco" />
 
     <TextView
+        android:id="@+id/ganador"
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GANADOR"
+        android:textColor="#3F51B5"
+        android:textSize="30dp"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+    <TextView
+        android:id="@+id/perdedor"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PERDEDOR"
+        android:textColor="#F44336"
+        android:textSize="30dp"
+        android:textStyle="bold"
         android:textAlignment="center"
         />
 
