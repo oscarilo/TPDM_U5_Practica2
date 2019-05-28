@@ -1,31 +1,110 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:padding="10dp"
-    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
+    android:layout_gravity="center"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".Main4Activity">
 
-    <EditText
-        android:id="@+id/nombre2"
+    <TextView
+        android:id="@+id/iniciar2"
 
         android:layout_width="match_parent"
-        android:hint="Nombre jugador 2"
         android:layout_height="wrap_content"
-        android:inputType="number" />
+        android:layout_marginBottom="10dp"
+        android:text="¡AGITAR EL DISPOSITIVO!"
+        android:textAlignment="center"
+        android:textColor="#FFC107"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/listo12"
 
-    <Button
-        android:id="@+id/join"
-
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="¡Listo!"
+        android:textAlignment="center"
+        android:textColor="#4CAF50"
+        android:textSize="20dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nombre12"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="TU NOMBRE"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/objeto12"
+
+        android:layout_width="150dp"
+        android:layout_height="150dp"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:ems="10"
-        android:text="Entrar" />
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/blanco" />
 
+    <TextView
+        android:id="@+id/listo22"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="Esperando ..."
+        android:textAlignment="center"
+        android:textColor="#000"
+        android:textSize="20dp"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nombre22"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        android:text="EL OTRO"
+        android:textAlignment="center"
+        android:textSize="20dp" />
+
+    <ImageView
+        android:id="@+id/objeto22"
+
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center"
+        android:layout_marginBottom="10dp"
+        android:src="@drawable/blanco" />
+
+    <TextView
+        android:id="@+id/ganador2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="GANADOR"
+        android:textAlignment="center"
+        android:textColor="#3F51B5"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/perdedor2"
+
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="PERDEDOR"
+        android:textAlignment="center"
+        android:textColor="#F44336"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
 </LinearLayout>

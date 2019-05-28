@@ -80,7 +80,7 @@ public class Main2Activity extends AppCompatActivity {
             public void onClick(View v) {
                 metodoInsertarDatosP2(nombre2.getText().toString());
 
-                Intent ventana = new Intent(Main2Activity.this, Main3Activity.class);
+                Intent ventana = new Intent(Main2Activity.this, Main4Activity.class);
                 startActivity(ventana);
                 finish();
             }

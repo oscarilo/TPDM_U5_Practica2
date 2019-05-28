@@ -13,12 +13,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+// ESTE ES EL JUGADOR 1
 
 public class Main3Activity extends AppCompatActivity {
     private DatabaseReference mDatabase;
@@ -89,10 +91,11 @@ public class Main3Activity extends AppCompatActivity {
                         System.out.println("RANDOM: " + num);
 
                         establecer_img(num);
+                        metodoEnviarObjeto("" + num);
                         contador = 0;
 
                     }
-                }else{
+                } else {
                     int id = getResources().getIdentifier("blanco", "drawable", getPackageName());
                     objeto1.setImageResource(id);
                     System.out.println("INVISIBLE");
@@ -108,6 +111,14 @@ public class Main3Activity extends AppCompatActivity {
         };
 
     }// onCreate
+
+    private void metodoEnviarObjeto(String num) {
+
+        // Game juego = new Game("", usuario, "", telefono, "", "", "", "1", "NO", "NO");
+        System.out.println("Objeto1 " + num);
+        mDatabase.child("lobby").child("juego1").child("objeto1").setValue(num);
+
+    }
 
     @Override
     protected void onStart() {
@@ -141,9 +152,31 @@ public class Main3Activity extends AppCompatActivity {
                     iniciar.setVisibility(View.VISIBLE);
                 }
                 nombre1.setText("" + game.sobre1);
+
                 if (game.finish.equals("")) {
                     // finish();
                 }// if
+                metodoGanador(game.objeto1, game.objeto2);
+                //get Objetos del jugador 2
+                if (game.objeto2.equals("1")) {
+                    // Piedra
+                    establecer_img1(1);
+
+                }
+
+                if (game.objeto2.equals("2")) {
+
+                    establecer_img1(2);
+
+                } else if (game.objeto2.equals("3")) {
+
+                    establecer_img1(3);
+
+                }
+
+                if (ganador.getVisibility() == View.VISIBLE) {
+                    Toast.makeText(Main3Activity.this,"Terminar el juego!",Toast.LENGTH_LONG).show();
+                }
 
 
             }// onDataChange
@@ -156,6 +189,49 @@ public class Main3Activity extends AppCompatActivity {
 
     }// consultarTodos
 
+    private void metodoGanador(String objeto1, String objeto2) {
+        // Gana piedra
+        System.out.println("OBJETO1: " + objeto1 + " OBJETO2: " + objeto2);
+        ganador.setVisibility(View.INVISIBLE);
+        perdedor.setVisibility(View.INVISIBLE);
+
+
+        switch (objeto1) {
+            case "1":
+                if ((objeto1.equals("1") && objeto2.equals("3"))) {
+                    ganador.setVisibility(View.VISIBLE);
+                    sonido();
+                } else if ((objeto1.equals("1") && objeto2.equals("2"))) {
+                    perdedor.setVisibility(View.VISIBLE);
+                }
+                break;
+
+            case "2":
+
+                if ((objeto1.equals("2") && objeto2.equals("1"))) {
+                    ganador.setVisibility(View.VISIBLE);
+                    sonido();
+                } else if ((objeto1.equals("2") && objeto2.equals("3"))) {
+                    perdedor.setVisibility(View.VISIBLE);
+                }
+                break;
+
+            case "3":
+                if ((objeto1.equals("3") && objeto2.equals("2"))) {
+                    ganador.setVisibility(View.VISIBLE);
+                    sonido();
+                } else if ((objeto1.equals("3") && objeto2.equals("1"))) {
+                    perdedor.setVisibility(View.VISIBLE);
+                }
+                break;
+        }
+    }// metodoGanador
+
+    public void establecer_img1(int numero) {
+        int id = getResources().getIdentifier(nom[numero], "drawable", getPackageName());
+        objeto2.setImageResource(id);
+
+    }
 
     public void sonido() {
         // Acceder al recurso de tipo sonido
